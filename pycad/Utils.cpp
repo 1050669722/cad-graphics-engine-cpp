@@ -6,6 +6,10 @@
 #include <cmath>
 #include <algorithm>
 #include <stdexcept>
+#include <direct.h>
+#include <sys/types.h>
+#include <sys/stat.h>
+#include <wchar.h>
 
 #include "pycad/Utils.h"
 
@@ -86,16 +90,16 @@ bool Utils::isDir(string &path) {
 }
 
 
-int Utils::getFileSize(const wchar_t *filepath) {
-    /*
-     * 获取文件大小
-     */
-    struct stat statbuf{};
-    int ret;
-    ret = wstat(filepath, &statbuf);
-    if (ret != 0) return -1;
-    return statbuf.st_size; //返回文件大小
-}
+// int Utils::getFileSize(const wchar_t *filepath) {
+//     /*
+//      * 获取文件大小
+//      */
+//     struct stat statbuf{};
+//     int ret;
+//     ret = wstat(filepath, &statbuf);
+//     if (ret != 0) return -1;
+//     return statbuf.st_size; //返回文件大小
+// }
 
 
 int Utils::getFileSize(string &filepathFromPython) {

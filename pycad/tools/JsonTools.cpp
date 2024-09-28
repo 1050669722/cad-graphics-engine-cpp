@@ -25,34 +25,34 @@ using namespace rapidjson;
 // using namespace boost;
 
 
-void JsonTools::readJsonFile(string &result, const wchar_t *filename) {
-    // 文件指针
-    FILE *fp = _wfopen(filename, L"rb, ccs=utf-8"); //这个utf-8应该是对应json文件的编码形式
-    // FILE *fp = _wfopen(filename, L"rb, ccs=unicode"); //这个utf-8应该是对应json文件的编码形式
-    // FILE *fp = _wfopen(filename, L"rb, ccs=gb2312"); //这个utf-8应该是对应json文件的编码形式
-    // FILE *fp = fopen(filename, "rb, ccs=utf-8");
-    // FILE *fp = fopen(filename, "rb, ccs=gbk");
-    // FILE *fp = _wfopen(reinterpret_cast<const wchar_t *>(filename), reinterpret_cast<const wchar_t *>("rb, ccs=unicode"));
-    // FILE *fp = fopen(filename, "rb, ccs=unicode");
-
-    // 检查打开是否正确
-    if (!fp) {
-        printf("[ERROR] Failed when open file: %s, code: %d", filename, errno);
-        result = ""; //return "";
-    }
-
-    // 预设jsonstr的最大占用空间
-    auto strSize = (size_t)(Utils::getFileSize(filename) * 1.2); //TODO: 能否写成1.0？ //1024 * 1024 * 1024; //1073741824 //1GB
-    char* buf = new char[strSize];
-    auto n = fread(buf, 1, strSize, fp); //int n
-    fclose(fp);
-
-    // 输出结果 释放内存
-    if (n >= 0) {
-        result.append(buf, 0, n);
-    }
-    delete[] buf;
-}
+// void JsonTools::readJsonFile(string &result, const wchar_t *filename) {
+//     // 文件指针
+//     FILE *fp = _wfopen(filename, L"rb, ccs=utf-8"); //这个utf-8应该是对应json文件的编码形式
+//     // FILE *fp = _wfopen(filename, L"rb, ccs=unicode"); //这个utf-8应该是对应json文件的编码形式
+//     // FILE *fp = _wfopen(filename, L"rb, ccs=gb2312"); //这个utf-8应该是对应json文件的编码形式
+//     // FILE *fp = fopen(filename, "rb, ccs=utf-8");
+//     // FILE *fp = fopen(filename, "rb, ccs=gbk");
+//     // FILE *fp = _wfopen(reinterpret_cast<const wchar_t *>(filename), reinterpret_cast<const wchar_t *>("rb, ccs=unicode"));
+//     // FILE *fp = fopen(filename, "rb, ccs=unicode");
+//
+//     // 检查打开是否正确
+//     if (!fp) {
+//         printf("[ERROR] Failed when open file: %s, code: %d", filename, errno);
+//         result = ""; //return "";
+//     }
+//
+//     // 预设jsonstr的最大占用空间
+//     auto strSize = (size_t)(Utils::getFileSize(filename) * 1.2); //TODO: 能否写成1.0？ //1024 * 1024 * 1024; //1073741824 //1GB
+//     char* buf = new char[strSize];
+//     auto n = fread(buf, 1, strSize, fp); //int n
+//     fclose(fp);
+//
+//     // 输出结果 释放内存
+//     if (n >= 0) {
+//         result.append(buf, 0, n);
+//     }
+//     delete[] buf;
+// }
 
 
 void JsonTools::readJsonFile(string &result, string &filenameFromPython) {
@@ -989,26 +989,26 @@ int JsonTools::parseJsonStr(const char* jsonstr, Infos& infos) {
 }
 
 
-void JsonTools::readJson(Infos &infos, const wchar_t* jsonpath) {
-    // 统计时间
-    // timer t_ogm;
-    clock_t start = clock();
-
-    // 打印提示信息 //TODO 应该做成装饰模式
-    cout << "[INFO] readJson ..." << endl;
-
-    // jsonfile -> jsonstr
-    string jsonstr;
-    readJsonFile(jsonstr, jsonpath); //string jsonstr = this->readJsonFile(jsonPath);
-
-    // jsonstr -> infos容器
-    int parseCode = parseJsonStr(jsonstr.c_str(), infos);
-
-    // 统计时间
-    // double time_cost = t_ogm.elapsed(); //秒
-    double time_cost = (double)(clock() - start) / CLOCKS_PER_SEC; //秒
-    cout << "[INFO] readJson done, " << time_cost << "s has elapsed" << endl; //TODO: 装饰器怎么写出来？
-}
+// void JsonTools::readJson(Infos &infos, const wchar_t* jsonpath) {
+//     // 统计时间
+//     // timer t_ogm;
+//     clock_t start = clock();
+//
+//     // 打印提示信息 //TODO 应该做成装饰模式
+//     cout << "[INFO] readJson ..." << endl;
+//
+//     // jsonfile -> jsonstr
+//     string jsonstr;
+//     readJsonFile(jsonstr, jsonpath); //string jsonstr = this->readJsonFile(jsonPath);
+//
+//     // jsonstr -> infos容器
+//     int parseCode = parseJsonStr(jsonstr.c_str(), infos);
+//
+//     // 统计时间
+//     // double time_cost = t_ogm.elapsed(); //秒
+//     double time_cost = (double)(clock() - start) / CLOCKS_PER_SEC; //秒
+//     cout << "[INFO] readJson done, " << time_cost << "s has elapsed" << endl; //TODO: 装饰器怎么写出来？
+// }
 
 
 void JsonTools::readJson(Infos &infos, string &jsonpathFromPython) {

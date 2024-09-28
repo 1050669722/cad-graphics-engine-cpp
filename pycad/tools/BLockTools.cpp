@@ -30,9 +30,9 @@ BLockTools::BLockTools(string &jsonPathFromPython) {
 }
 
 
-void BLockTools::readJson(const wchar_t *jsonPath) {
-    JsonTools::readJson(infos, jsonPath);
-}
+// void BLockTools::readJson(const wchar_t *jsonPath) {
+//     JsonTools::readJson(infos, jsonPath);
+// }
 
 
 void BLockTools::readJson(string &jsonPathFromPython) {
