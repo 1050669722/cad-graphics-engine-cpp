@@ -14,7 +14,7 @@ project(${PROJECT_NAME})
 # 设置头文件路径
 set(INC_DIR ./include)
 set(EIGEN_DIR ./include/eigen-3.4.0/eigen-3.4.0)
-set(OpenCV_DIR D:/Programs/OpenCV/3.4.15/opencv/build_20240929)
+set(OpenCV_DIR D:/Programs/OpenCV/3.4.15/opencv/build_20240929_mingw64)
 #set(OpenCV_DIR /home/liu/Programs/opencv-3.4.15/build) #sudo make install之后，相关的东西就在这里了：/usr，编译器会在这里寻找
 
 # 寻找OpenCV库
