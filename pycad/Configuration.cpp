@@ -12,7 +12,8 @@ using namespace cv;
 
 
 Configuration::Configuration() {
-    jsonPath = L"../json/15.集团版YJ160-11(T2-17X)_t3.json"; //L""
+    // jsonPath = L"../json/15.集团版YJ160-11(T2-17X)_t3.json"; //L""
+    jsonPath = "../json/15.json"; //L""
     // jsonPath = L"../json/15.YJ160-11(T2-17X)_t3.json";
     // jsonPath = L"../json/15.YJ160-11(T2-17X)_t3_1229.json"; //L""
     // jsonPath = L"../json/15.集团版YJ160-11(T2-17X)_t3 - forMtext.json"; //L""

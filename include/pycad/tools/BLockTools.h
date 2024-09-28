@@ -27,7 +27,7 @@ private:
 
     // 成员方法
     // 读取json文件
-    void readJson(const wchar_t* jsonPath);
+    // void readJson(const wchar_t* jsonPath);
     void readJson(string& jsonPathFromPython);
 
     // 为来自hatchs的图元作标记
@@ -63,7 +63,7 @@ public:
     // 成员方法
     // 默认构造函数
     BLockTools();
-    explicit BLockTools(const wchar_t* jsonPath);
+    // explicit BLockTools(const wchar_t* jsonPath);
     explicit BLockTools(string& jsonPathFromPython);
     // 生成rootBlock
     void generateRootBlock();

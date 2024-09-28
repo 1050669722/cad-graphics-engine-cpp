@@ -32,7 +32,8 @@ private:
 
 public:
     // 成员属性
-    const wchar_t* jsonPath; //可以写中文
+    // const wchar_t* jsonPath; //可以写中文
+    const char* jsonPath;
     string jsonPathFromPython; //为python层做的，可以写中文
     string cache; //不写中文 //python层可以写中文
     double restoreScaleFactor;

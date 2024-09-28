@@ -79,14 +79,14 @@ void JsonTools::readJsonFile(string &result, string &filenameFromPython) {
 }
 
 
-string JsonTools::readJsonFile(const wchar_t* filename) {
-    // 结果字符串
-    string result;
-    // 读取
-    readJsonFile(result, filename);
-    // 返回
-    return result;
-}
+// string JsonTools::readJsonFile(const wchar_t* filename) {
+//     // 结果字符串
+//     string result;
+//     // 读取
+//     readJsonFile(result, filename);
+//     // 返回
+//     return result;
+// }
 
 
 string JsonTools::readJsonFile(string &filenameFromPython) {
@@ -1033,14 +1033,14 @@ void JsonTools::readJson(Infos &infos, string &jsonpathFromPython) {
 }
 
 
-Infos JsonTools::readJson(const wchar_t* jsonpath) {
-    // infos容器
-    Infos infos;
-    // json -> infos
-    readJson(infos, jsonpath);
-    // 返回
-    return infos;
-}
+// Infos JsonTools::readJson(const wchar_t* jsonpath) {
+//     // infos容器
+//     Infos infos;
+//     // json -> infos
+//     readJson(infos, jsonpath);
+//     // 返回
+//     return infos;
+// }
 
 
 Infos JsonTools::readJson(string &jsonpathFromPython) {

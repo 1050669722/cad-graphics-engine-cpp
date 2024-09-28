@@ -17,7 +17,7 @@ using namespace rapidjson;
 
 class JsonTools {
 public:
-    static void readJsonFile(string& result, const wchar_t* filename);
+    // static void readJsonFile(string& result, const wchar_t* filename);
     static void readJsonFile(string& result, string& filenameFromPython);
     static string readJsonFile(const wchar_t* filename); //TODO: 考虑移动至Utils中去？
     static string readJsonFile(string& filenameFromPython); //TODO: 考虑移动至Utils中去？
@@ -48,7 +48,7 @@ public:
 
     static int parseJsonStr(const char* jsonstr, Infos& infos);
 
-    static void readJson(Infos& infos, const wchar_t* jsonpath);
+    // static void readJson(Infos& infos, const wchar_t* jsonpath);
     static void readJson(Infos& infos, string& jsonpathFromPython);
     static Infos readJson(const wchar_t* jsonpath);
     static Infos readJson(string& jsonpathFromPython);

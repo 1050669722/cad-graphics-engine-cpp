@@ -18,10 +18,10 @@ using namespace std;
 BLockTools::BLockTools() = default;
 
 
-BLockTools::BLockTools(const wchar_t *jsonPath) {
-    readJson(jsonPath); //生成 infos
-    generateRootBlock(); //生成 rootBlock
-}
+// BLockTools::BLockTools(const wchar_t *jsonPath) {
+//     readJson(jsonPath); //生成 infos
+//     generateRootBlock(); //生成 rootBlock
+// }
 
 
 BLockTools::BLockTools(string &jsonPathFromPython) {

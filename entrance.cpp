@@ -35,7 +35,9 @@ int main() {
     Configuration* ptr_config = &config;
 
     // ¸ù rootBlock
-    BLockTools blockTools = BLockTools(config.jsonPath);
+    // BLockTools blockTools = BLockTools(config.jsonPath);
+    string strJsonPath = string(string(config.jsonPath));
+    BLockTools blockTools = BLockTools(strJsonPath);
     BLock* ptr_rootBlock = blockTools.rootBlock;
 
     // Ô¤´¦Àí
